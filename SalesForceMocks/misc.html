@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>new_file</title>
+		<meta name="author" content="Administrator" />
+		<!-- Date: 2011-11-01 -->
+	</head>
+	<body>
+			<table width="100%" height="100%">
+				<tr>
+					<td width="100%" align="center">
+	                    <table>
+	                        <tr>
+	                            <td align="left"><apex:image value="{!URLFOR($Resource.FWDesignerMarkePlaceNavigationStyleGuide, 'DMPortalHeader.jpg')}"/></td>
+	                        </tr>
+	                        <tr>
+	                            <td align="left"><hr/></td>
+	                        </tr>
+	                        <tr>
+	                            <td align="center">
+	                                <table width="100%">
+	                                    <tr>
+	                                        <td><apex:commandLink style="color:#6E6F71;" styleClass="optionLink" action="{!modifyAccountInformation}" value="Update Account Information"/></td>
+	                                        <td><apex:commandLink style="color:#6E6F71;" styleClass="optionLink" action="{!printTemporaryIDCardPDF}" value="Print Temporary ID Card"/></td>
+	                                        <td><apex:outputText value="Contact Us" style="color:#6E6F71;text-decoration: underline;"/></td>
+	                                        <td><apex:commandLink style="color:#6E6F71;" styleClass="optionLink" action="{!returnToWSI}" value="Return to Designer Marketplace"/></td>
+	                                    </tr>
+	                                </table>
+	                            </td>
+	                        </tr>
+	                        <tr>
+	                            <td align="left"><hr/></td>
+	                        </tr>
+	                    </table>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<table width="100%">
+							<tr>
+								<td width="50%" align="center" valign="top">
+	                                <table width="100%" height="100%">
+	                                    <tr>
+	                                        <td>
+	                                            <apex:outputText value="Welcome {!currentUser.FirstName} {!currentUser.LastName}!" style="color:#6E6F71;font-size:16;font-weight:bold;"/>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <apex:outputText value="Valued Member since {!currentUser.CreatedDate}" style="color:#6E6F71;font-size:12;"/>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <apex:outputText value="Current records reflect the following information:" style="color:#6E6F71;font-size:12;"/>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <table>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Title:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText value="{!currentUser.Title}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Email:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText value="{!currentUser.Email}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Phone:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText value="{!currentUser.Phone}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Fax:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText value="{!currentUser.Fax}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Business:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText value="{!currentUser.CompanyName}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td>&nbsp;</td>
+	                                                    <td><apex:outputText value="{!currentUser.Street}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td>&nbsp;</td>
+	                                                    <td><apex:outputText value="{!currentUser.City}, {!currentUser.State} {!currentUser.PostalCode}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td></td>
+	                                                    <td></td>
+	                                                </tr>
+	                                            </table>
+	                                        </td>
+	                                    </tr>
+	                                </table>
+								</td>
+								<td width="50%" align="center" valign="top">
+	                                <table width="100%" height="100%">
+	                                    <tr>
+	                                        <td>
+	                                            <table>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Membership Status:" style="color:#6E6F71;font-size:16;font-weight:bold;"/></td>
+	                                                    <td><apex:outputText id="membershiplevel" value="{!currentUser.Account_Level__c}" style="color:#6E6F71;font-size:16;font-weight:bold;"/></td>
+	                                                </tr>
+	                                            </table>
+	                                        </td>
+	                                    </tr>
+	                                    <tr>
+	                                        <td>
+	                                            <table>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Membership ID:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText id="memberid" value="{!currentUser.Designer_ID__c}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Password:" style="color:#6E6F71;font-size:12;"/></td>
+	                                                    <td><apex:outputText id="password" value="{!currentUser.eComm_Pswd__c}" style="color:#6E6F71;font-size:12;"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td><apex:outputText value="Expires: " style="color:#6E6F71;"/></td>
+	                                                    <td style="color:#6E6F71;"><apex:outputField value="{!currentUser.DTP_Card_Exp_Date_CLN__c}" id="membershipexpires" style="color:#6E6F71; width:300px"/>&nbsp;&nbsp;<apex:outputText value="Expires soon!" style="color:#6E6F71; font-weight:bold;" rendered="{!(isExpiring == true)}"/></td>
+	                                                </tr>
+	                                                <tr>
+	                                                    <td></td>
+	                                                    <td></td>
+	                                                </tr>
+	                                            </table>
+	                                        </td>
+	                                    </tr>
+	                                </table>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+	</body>
+</html>

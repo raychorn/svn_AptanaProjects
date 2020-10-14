@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var w = $(document).width();
+				var h = $(document).height();
+				$(window).resize(function() {
+					w = $(document).width();
+					h = $(document).height();
+					$("#div_target").css('top',h-50).css('left',w-150);
+				});				
+				$("#div_image").css('display','inline');
+				$("#div_target").css('top',h-50).css('left',w-150);
+				$("#image").click(function(event){
+					$("#div_target").show();
+				});
+				$("#image").mouseover(function(event){
+					$("#div_target").show();
+				});
+				$("#image").mouseout(function(event){
+					$("#div_target").hide();
+				});
+			 });
+ 		</script>
+		<title>FaceBook Programming Test</title>
+	</head>
+	<body>
+		<h1>FaceBook Programming Test</h1>
+		<div id="div_image" style="display: none;"><img id="image" src="http://downloads.vyperlogix.com/images/mouseover-this-image.jpg" /></div>
+		<div id="div_target" style="position: absolute; top: 500px; left: 500px; display: none;"><img id="img" src="http://downloads.vyperlogix.com/images/btn_donateCC_LG.gif" /></div>
+	</body>
+</html>
